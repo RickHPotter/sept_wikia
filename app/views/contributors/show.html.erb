@@ -1,0 +1,15 @@
+<% content_for :title do %>
+  <p class = "display-4 m-0" >
+    <%= @contributor.name %>
+  </p>
+<% end %>
+
+<% content_for :subtitle do %>
+  <p class = "lead text-dark" >
+    Sept Wikia
+  </p>
+<% end %>
+
+<div class="columns mt-2 is-centered">
+  <%= render "display", contributor: @contributor %>
+</div>

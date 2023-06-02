@@ -1,0 +1,59 @@
+<style>
+  .valid-input:focus, .invalid-input:focus {
+    box-shadow: 0 0 6px green;
+  }
+
+  .invalid-input:focus {
+    box-shadow: 0 0 6px red;
+  }
+
+  .valid-input:focus {
+    border:1px solid green;
+  }
+
+  .invalid-input:focus {
+    border:1px solid red;
+  }
+
+  .valid-input {
+    border:1px solid green;
+  }
+
+  .invalid-input {
+    border:1px solid red;
+  }
+
+  .feedback {
+    display: block;
+    width: 100%;
+    margin-top: 0.25rem;
+    font-size: 80%;
+  }
+
+</style>
+
+<%= form_with(model: contributor, class: "needs-validation") do |form| %>
+  
+  <div class="form-row pt-2">
+    <%= render "shared/forms/text_field",
+      form: form, contributor: contributor, field: :name
+    %>
+
+    <%= render "shared/forms/email_field",
+      form: form, contributor: contributor, field: :email
+    %>
+
+    <%= render "shared/forms/text_field",
+      form: form, contributor: contributor, field: :role
+    %>
+
+    <%= render "shared/forms/text_area",
+      form: form, contributor: contributor, field: :intro
+    %>
+  </div>
+
+  <div class="container pt-2">
+    <%= form.submit submit_action, class: "btn btn-primary" %>
+    <%= link_to "Cancel", contributors_path, class: "btn btn-light" %>
+  </div>
+<% end %>

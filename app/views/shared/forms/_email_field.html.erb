@@ -1,0 +1,13 @@
+<div class = "col-md-4 mb-2">
+  <%= form.label field, style: "display: block", class: "form-label"%>
+  <% if contributor.errors[field].any? %>
+    <%= form.email_field field, class: "form-control invalid-input" %>
+      <% contributor.errors[field].each do |message| %>
+        <span class="feedback text-danger">
+          <%= field.to_s.capitalize() << ' ' << message << '.' %>
+        </span>
+      <% end %>
+  <% else %>
+    <%= form.email_field field, class: "form-control valid-input" %>
+  <% end %>
+</div>

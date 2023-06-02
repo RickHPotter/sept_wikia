@@ -1,0 +1,9 @@
+<% content_for :subtitle do %>
+  <p class="lead text-dark">
+    New Contributor
+  </p>
+<% end %>
+
+<div class="row justify-content-center">
+  <%= render "form", contributor: @contributor, submit_action: 'Create' %>
+</div>

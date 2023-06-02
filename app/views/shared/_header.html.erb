@@ -1,0 +1,49 @@
+<div class="bg-primary">
+
+  <nav class="navbar navbar-expand-lg bg-primary">
+    <div class="container-fluid">
+      <span class = "text-dark display-6">name_svg</span>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <%= link_to "Contributors", contributors_path, class: "nav-link active" %>
+            </li>
+            <li class="nav-item">
+              <%= link_to "Create Contributor", new_contributor_path, class: "nav-link" %>
+            </li>
+            <%# TODO: REMOVE THIS ACTIVE RECORD OPERATIONS BELOW %>
+            <li class="nav-item">
+              <%= link_to "Edit Contributor", edit_contributor_path(Contributor.last), class: "nav-link" %>
+            </li>
+            <li class="nav-item">
+              <%= link_to "Show Contributor", contributor_path(Contributor.last), class: "nav-link" %>
+            </li>
+        </ul>
+        <form class="d-flex" role="search">
+          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-warning" type="submit">icon</button>
+        </form>
+      </div>
+    </div>
+  </nav>
+
+  <%# <!-- Hero content: will be in the middle --> %>
+  <div class="container p-4 text-center">
+    <% if content_for :title %>
+      <%= yield :title %>
+    <% else %>
+      <p class = "display-4 m-0">Sept Wikia</p>
+    <% end %>
+    
+    <% if content_for :subtitle %>
+      <%= yield :subtitle %>
+    <% else %>
+      <p class="lead text-dark">
+        <%= Date.today.strftime("%e %b, %Y") %>
+      </p>
+    <% end %>
+  </div>
+</div>
