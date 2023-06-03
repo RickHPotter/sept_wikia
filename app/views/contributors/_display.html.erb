@@ -1,25 +1,27 @@
-<div class="column is-one-third">
-  <nav class="panel is-link">
-    <p class="panel-heading">
-      <%= @contributor.name %>
+<div class="card border-primary mt-3 text-center" style="min-width: 18rem;">
+  <div class="card-header">
+    <%= @contributor.name %>
+  </div>
+  <div class="card-body text-primary">
+    <h5 class="card-title">
+      <%= @contributor.role %>
+    </h5>
+    <p class="card-text">
+      <%= @contributor.intro %>
     </p>
-    <div class="panel-block">
-      Role: <%= @contributor.role %>
-    </div>
-    <div class="panel-block">
-      Intro: <%= @contributor.intro %>
-    </div>
-  </nav>
+  </div>
 
-  <div class="container is-pulled-left">
-    <%= link_to 'back', root_path, class: "is-family-monospace button is-dark is-outlined"%>
-  </div>
-  <div class="container is-pulled-right">
+  <div class="d-flex justify-content-center">
+    <%# <%= link_to 'back', root_path, class: "btn btn-outline-dark"%>
+    <div class="p-2">
+    <%= link_to 'edit', edit_contributor_path(@contributor),
+      class: "btn btn-outline-info mr-2"%>
+    </div>
+    <div class="p-2">
+
     <%= button_to 'delete', contributor_path(@contributor), method: :delete, data: {
-        confirm: "Are you sure you want to remove #{@contributor.name}"
-      }, class: "is-family-monospace button is-danger is-outlined"%>
-  </div>
-  <div class="container mr-1 is-pulled-right">
-    <%= link_to 'edit', edit_contributor_path(@contributor), class: "is-family-monospace button is-link is-outlined"%>
+      confirm: "Are you sure you want to remove #{@contributor.name}"
+      }, class: "btn btn-outline-danger"%>
+    </div>
   </div>
 </div>

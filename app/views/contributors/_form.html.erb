@@ -34,7 +34,7 @@
 
 <%= form_with(model: contributor, class: "needs-validation") do |form| %>
   
-  <div class="form-row pt-2">
+  <div class="form-row pt-2 pb-2">
     <%= render "shared/forms/text_field",
       form: form, contributor: contributor, field: :name
     %>
@@ -52,7 +52,7 @@
     %>
   </div>
 
-  <div class="container pt-2">
+  <div class="container p-0">
     <%= form.submit submit_action, class: "btn btn-primary" %>
     <%= link_to "Cancel", contributors_path, class: "btn btn-light" %>
   </div>

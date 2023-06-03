@@ -1,10 +1,5 @@
-<h1>Editing contributor</h1>
+<h1 class="display-5">
+  Editing <span class="text-primary"><%= @contributor.name %></span>
+</h1>
 
 <%= render "form", contributor: @contributor, submit_action: 'Edit' %>
-
-<br>
-
-<div>
-  <%= link_to "Show this contributor", @contributor %> |
-  <%= link_to "Back to contributors", contributors_path %>
-</div>
